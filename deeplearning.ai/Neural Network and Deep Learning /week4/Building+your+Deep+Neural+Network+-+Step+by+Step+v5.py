@@ -32,7 +32,7 @@
 # - testCases provides some test cases to assess the correctness of your functions
 # - np.random.seed(1) is used to keep all the random function calls consistent. It will help us grade your work. Please don't change the seed. 
 
-# In[1]:
+# In[47]:
 
 import numpy as np
 import h5py
@@ -88,7 +88,7 @@ np.random.seed(1)
 # - Use random initialization for the weight matrices. Use `np.random.randn(shape)*0.01` with the correct shape.
 # - Use zero initialization for the biases. Use `np.zeros(shape)`.
 
-# In[4]:
+# In[50]:
 
 # GRADED FUNCTION: initialize_parameters
 
@@ -129,7 +129,7 @@ def initialize_parameters(n_x, n_h, n_y):
     return parameters    
 
 
-# In[5]:
+# In[51]:
 
 parameters = initialize_parameters(3,2,1)
 print("W1 = " + str(parameters["W1"]))
@@ -262,7 +262,7 @@ print("b2 = " + str(parameters["b2"]))
 #         parameters["b" + str(L)] = np.zeros((layer_dims[1], 1))
 # ```
 
-# In[ ]:
+# In[56]:
 
 # GRADED FUNCTION: initialize_parameters_deep
 
@@ -283,8 +283,8 @@ def initialize_parameters_deep(layer_dims):
 
     for l in range(1, L):
         ### START CODE HERE ### (≈ 2 lines of code)
-        parameters['W' + str(l)] = np.random.randn((layer_dims[l],layer_dims[l-1]))
-        parameters['b' + str(l)] = np.zeros((layer_dims[l]))
+        parameters['W' + str(l)] = np.random.randn(layer_dims[l],layer_dims[l-1])
+        parameters['b' + str(l)] = np.zeros((layer_dims[l],1))
         ### END CODE HERE ###
         
         assert(parameters['W' + str(l)].shape == (layer_dims[l], layer_dims[l-1]))
@@ -294,7 +294,7 @@ def initialize_parameters_deep(layer_dims):
     return parameters
 
 
-# In[ ]:
+# In[57]:
 
 parameters = initialize_parameters_deep([5,4,3])
 print("W1 = " + str(parameters["W1"]))
