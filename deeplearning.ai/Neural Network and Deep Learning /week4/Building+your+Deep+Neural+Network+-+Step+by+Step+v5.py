@@ -262,7 +262,7 @@ print("b2 = " + str(parameters["b2"]))
 #         parameters["b" + str(L)] = np.zeros((layer_dims[1], 1))
 # ```
 
-# In[56]:
+# In[60]:
 
 # GRADED FUNCTION: initialize_parameters_deep
 
@@ -283,18 +283,18 @@ def initialize_parameters_deep(layer_dims):
 
     for l in range(1, L):
         ### START CODE HERE ### (≈ 2 lines of code)
-        parameters['W' + str(l)] = np.random.randn(layer_dims[l],layer_dims[l-1])
+        parameters['W' + str(l)] = np.random.randn(layer_dims[l],layer_dims[l-1]) * 0.01
         parameters['b' + str(l)] = np.zeros((layer_dims[l],1))
         ### END CODE HERE ###
         
-        assert(parameters['W' + str(l)].shape == (layer_dims[l], layer_dims[l-1]))
+        assert(parameters['W' + str(l)].shape == (layer_dims[l], layer_dims[l-1])) * 0.01
         assert(parameters['b' + str(l)].shape == (layer_dims[l], 1))
 
         
     return parameters
 
 
-# In[57]:
+# In[61]:
 
 parameters = initialize_parameters_deep([5,4,3])
 print("W1 = " + str(parameters["W1"]))
