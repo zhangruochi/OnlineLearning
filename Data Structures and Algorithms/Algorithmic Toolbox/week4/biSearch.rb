@@ -6,7 +6,7 @@
 
 
 
-def biSearch(array,low,high,k)
+def biSearch_recur(array,low,high,k)
     if high < low
         return "not found"
     end
@@ -24,7 +24,7 @@ end
 
 
 #返回插入的位置
-def biSearch(array,low,high,k)
+def biSearch_recur(array,low,high,k)
     if high < low
         return 0 if array[0] > k
         return high + 1 if array[high] < k
@@ -45,8 +45,26 @@ def biSearch(array,low,high,k)
 end  
 
 
+#迭代版本
+def biSearch_iter(array,low,high,k)
+    while low <= high
+    
+        mid = low + (high - low) / 2
+
+        if array[mid] == k
+            return mid
+        elsif array[mid] > k  
+            high = mid - 1
+        else
+            low = mid + 1     
+        end
+    end
+    return "not found"
+
+end  
+
 
 
 
 a = [1,2,3,4,5,6,8,10]
-p biSearch(a,0,a.size-1,11)
+p biSearch_iter(a,0,a.size-1,6)
