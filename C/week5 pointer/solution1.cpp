@@ -28,6 +28,7 @@
 输出对应矩阵的边缘元素和，一个一行。
 */
 
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -37,17 +38,24 @@ int get_value(int **,int,int);
 int main(int argc, char const *argv[])
 {
     int times;
+    int *result;
     int row,column;
     int **matrix;
 
     scanf("%d",&times);
+    result = (int*)malloc(sizeof(int)*times);
+
     for(int i=0;i<times;i++){
         scanf("%d %d",&row,&column);
         //printf("%d %d\n",row,column);
         matrix = (int**)malloc(sizeof(int*)*row);
         get_matrix(matrix,row,column);
-        printf("%d\n",get_value(matrix,row,column));
+        result[i] = get_value(matrix,row,column);
     }
+    
+    for(int i=0;i<times;i++)
+        printf("%d\n",result[i]);
+
     return 0;
 }
 
@@ -91,10 +99,9 @@ int get_value(int **matrix, int row, int column){
         sum = sum + *(*(matrix+i)+column-1);
     }
     sum -= corner;
-    
+
     return sum;
 }
-
 
 
 
