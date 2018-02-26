@@ -1,0 +1,51 @@
+{
+    "submissionURL": "https://www.coursera.org/api/onDemandProgrammingScriptSubmissions.v1", 
+    "modelAssignments": [
+        {
+            "model": "dancetrap.mzn", 
+            "id": "dmAg9", 
+            "name": "Dance Trap Model"
+        }
+    ], 
+    "name": "Dance Trap", 
+    "moocPasswordString": "Assignment token", 
+    "solutionAssignments": [
+        {
+            "model": "dancetrap.mzn", 
+            "data": "./data/dancetrap_0.dzn", 
+            "id": "yCEU0", 
+            "timeout": "60", 
+            "name": "Dance Trap 1"
+        }, 
+        {
+            "model": "dancetrap.mzn", 
+            "data": "./data/dancetrap_1.dzn", 
+            "id": "EU8Oo", 
+            "timeout": "60", 
+            "name": "Dance Trap 2"
+        }, 
+        {
+            "model": "dancetrap.mzn", 
+            "data": "./data/dancetrap_2.dzn", 
+            "id": "1nvKA", 
+            "timeout": "60", 
+            "name": "Dance Trap 3"
+        }, 
+        {
+            "model": "dancetrap.mzn", 
+            "data": "./data/dancetrap_3.dzn", 
+            "id": "fWaNC", 
+            "timeout": "60", 
+            "name": "Dance Trap 4"
+        }, 
+        {
+            "model": "dancetrap.mzn", 
+            "data": "./data/dancetrap_4.dzn", 
+            "id": "hstZ4", 
+            "timeout": "300", 
+            "name": "Dance Trap 5"
+        }
+    ], 
+    "moocName": "Coursera", 
+    "assignmentKey": "YqhOXnvQEeaBdRIUcoGXuw"
+}
