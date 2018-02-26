@@ -1,0 +1,37 @@
+{
+    "submissionURL": "https://www.coursera.org/api/onDemandProgrammingScriptSubmissions.v1", 
+    "modelAssignments": [
+        {
+            "model": "raid.mzn", 
+            "id": "4iOnK", 
+            "name": "Raid Model"
+        }
+    ], 
+    "name": "Raid", 
+    "moocPasswordString": "Assignment token", 
+    "solutionAssignments": [
+        {
+            "model": "raid.mzn", 
+            "data": "./data/raid_0.dzn", 
+            "id": "zyunz", 
+            "timeout": "60", 
+            "name": "Raid Problem 1"
+        }, 
+        {
+            "model": "raid.mzn", 
+            "data": "./data/raid_1.dzn", 
+            "id": "T61n6", 
+            "timeout": "60", 
+            "name": "Raid Problem 2"
+        }, 
+        {
+            "model": "raid.mzn", 
+            "data": "./data/raid_2.dzn", 
+            "id": "7a4OO", 
+            "timeout": "60", 
+            "name": "Raid Problem 3"
+        }
+    ], 
+    "moocName": "Coursera", 
+    "assignmentKey": "U-FDxXvOEeaykw4ENABBmQ"
+}
