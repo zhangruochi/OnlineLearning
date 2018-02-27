@@ -1,0 +1,65 @@
+{
+    "submissionURL": "https://www.coursera.org/api/onDemandProgrammingScriptSubmissions.v1", 
+    "modelAssignments": [
+        {
+            "model": "royalhunt.mzn", 
+            "id": "S10HI", 
+            "name": "Royal Hunt Model"
+        }
+    ], 
+    "name": "Royal Hunt", 
+    "moocPasswordString": "Assignment token", 
+    "solutionAssignments": [
+        {
+            "model": "royalhunt.mzn", 
+            "data": "./data/royalhunt_0.dzn", 
+            "id": "WRTKa", 
+            "timeout": "60", 
+            "name": "Royal Hunt Problem 1"
+        }, 
+        {
+            "model": "royalhunt.mzn", 
+            "data": "./data/royalhunt_1.dzn", 
+            "id": "9GLIN", 
+            "timeout": "60", 
+            "name": "Royal Hunt Problem 2"
+        }, 
+        {
+            "model": "royalhunt.mzn", 
+            "data": "./data/royalhunt_2.dzn", 
+            "id": "o8Yil", 
+            "timeout": "60", 
+            "name": "Royal Hunt Problem 3"
+        }, 
+        {
+            "model": "royalhunt.mzn", 
+            "data": "./data/royalhunt_3.dzn", 
+            "id": "dxGLO", 
+            "timeout": "60", 
+            "name": "Royal Hunt Problem 4"
+        }, 
+        {
+            "model": "royalhunt.mzn", 
+            "data": "./data/royalhunt_4.dzn", 
+            "id": "1X9QC", 
+            "timeout": "60", 
+            "name": "Royal Hunt Problem 5"
+        }, 
+        {
+            "model": "royalhunt.mzn", 
+            "data": "./data/royalhunt_5.dzn", 
+            "id": "LsBqD", 
+            "timeout": "60", 
+            "name": "Royal Hunt Problem 6"
+        }, 
+        {
+            "model": "royalhunt.mzn", 
+            "data": "./data/royalhunt_6.dzn", 
+            "id": "rVyWf", 
+            "timeout": "60", 
+            "name": "Royal Hunt Problem 7"
+        }
+    ], 
+    "moocName": "Coursera", 
+    "assignmentKey": "IpVNPXvREeaHRQoUiiXssQ"
+}
