@@ -1,6 +1,6 @@
 
 /**
- * Write a description of part1 here.
+ * Write a description of Part1 here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
