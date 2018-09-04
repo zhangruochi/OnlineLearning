@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=CaesarCipher
+comment1.params=input\ key
+comment1.target=java.lang.String\ encrypt(java.lang.String,\ int)
+comment2.params=phase\ key1\ key2
+comment2.target=java.lang.String\ encryptTwoKey(java.lang.String,\ int,\ int)
+comment3.params=ch
+comment3.target=boolean\ isVowel(char)
+comment4.params=phase\ ch
+comment4.target=java.lang.String\ repeplaceVowels(java.lang.String,\ char)
+comment5.params=phase\ ch
+comment5.target=java.lang.String\ emphasize(java.lang.String,\ char)
+comment6.params=
+comment6.target=void\ testCaesar()
+numComments=7
