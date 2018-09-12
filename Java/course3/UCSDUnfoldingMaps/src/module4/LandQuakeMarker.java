@@ -33,6 +33,8 @@ public class LandQuakeMarker extends EarthquakeMarker {
 		// and how it is set in the EarthquakeMarker constructor
 		
 		// TODO: Implement this method
+		pg.ellipse(x, y, 10, 10);
+
 		
 	}
 	
@@ -42,7 +44,4 @@ public class LandQuakeMarker extends EarthquakeMarker {
 		return (String) getProperty("country");
 	}
 
-
-
-		
 }

@@ -1,7 +1,9 @@
 package module4;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map.Entry;
 
 import de.fhpotsdam.unfolding.UnfoldingMap;
 import de.fhpotsdam.unfolding.data.Feature;
@@ -80,7 +82,7 @@ public class EarthquakeCityMap extends PApplet {
 		//earthquakesURL = "test2.atom";
 		
 		// WHEN TAKING THIS QUIZ: Uncomment the next line
-		//earthquakesURL = "quiz1.atom";
+		earthquakesURL = "quiz1.atom";
 		
 		
 		// (2) Reading in earthquake data and geometric properties
@@ -134,7 +136,7 @@ public class EarthquakeCityMap extends PApplet {
 	private void addKey() {	
 		// Remember you can use Processing's graphics methods here
 		fill(255, 250, 240);
-		rect(25, 50, 150, 250);
+		rect(25, 50, 150, 350);
 		
 		fill(0);
 		textAlign(LEFT, CENTER);
@@ -152,6 +154,8 @@ public class EarthquakeCityMap extends PApplet {
 		text("5.0+ Magnitude", 75, 125);
 		text("4.0+ Magnitude", 75, 175);
 		text("Below 4.0", 75, 225);
+		
+		
 	}
 
 	
@@ -170,9 +174,10 @@ public class EarthquakeCityMap extends PApplet {
 		// If isInCountry ever returns true, isLand should return true.
 		for (Marker m : countryMarkers) {
 			// TODO: Finish this method using the helper method isInCountry
-			
+			if(isInCountry(earthquake,m))
+				return true;
+				
 		}
-		
 		
 		// not inside any country
 		return false;
@@ -197,6 +202,35 @@ public class EarthquakeCityMap extends PApplet {
 		//     	and (2) if it is on land, that its country property matches 
 		//      the name property of the country marker.   If so, increment
 		//      the country's counter.
+		HashMap<String,Integer> counter = new HashMap<String,Integer>();
+		int countOfOcean = 0;
+		
+		for(Marker currentCountryMarker : countryMarkers) {
+			int count = 0;
+			for(Marker currentQuakeMarker : quakeMarkers ) {
+				if(((EarthquakeMarker)currentQuakeMarker).isOnLand) {
+					if(((String)currentCountryMarker.getProperty("name")).equals((String)currentQuakeMarker.getProperty("country")))
+						count++;
+				}
+			}
+			if(count>0)
+				counter.put((String)currentCountryMarker.getProperty("name"), count);
+		}
+		
+		for(Marker currentQuakeMarker : quakeMarkers ) {
+			if((!((EarthquakeMarker)currentQuakeMarker).isOnLand))
+				countOfOcean++;
+		}
+		
+		for(Entry<String,Integer> entry: counter.entrySet()) {
+			System.out.println(entry.getKey() + ": " + entry.getValue());
+		}
+		
+		System.out.println("Ocean: "+ countOfOcean);
+
+		
+		
+
 		
 		// Here is some code you will find useful:
 		// 
