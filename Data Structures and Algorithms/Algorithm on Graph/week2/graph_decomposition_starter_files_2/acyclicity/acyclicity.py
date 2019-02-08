@@ -4,7 +4,25 @@ import sys
 
 
 def acyclic(adj):
-    return 0
+
+    def dfs(adj,start):
+        nonlocal flag
+        for node in adj[start]:
+            if node in visited:
+                flag = 1
+                return 
+            visited.append(node)
+            dfs(adj,node)
+            visited.pop()
+        return 
+
+    flag = 0
+    for start in range(len(adj)):
+        visited = []
+        dfs(adj,start)
+        if flag == 1:
+            return flag
+    return flag
 
 if __name__ == '__main__':
     input = sys.stdin.read()
