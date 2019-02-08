@@ -1,11 +1,31 @@
 #Uses python3
 
 import sys
-
+from collections import deque
 
 def number_of_components(adj):
+
+    def walk(node):
+        component = set([node])
+        queue = deque([node])
+        while queue:
+            cur = queue.pop()
+            for node in adj[cur]:
+                if node not in component:
+                    queue.append(node)
+                    component.add(node)
+        return component
+
+
     result = 0
-    #write your code here
+    visited = set()
+
+    for node in range(len(adj)):
+        if node not in visited:
+            component = walk(node)
+            visited = visited.union(component)
+            result += 1
+
     return result
 
 if __name__ == '__main__':

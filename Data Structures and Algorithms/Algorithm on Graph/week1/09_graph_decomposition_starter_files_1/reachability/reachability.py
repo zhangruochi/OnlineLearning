@@ -1,15 +1,20 @@
 #Uses python3
 
 import sys
-
-
-def dfs(adj,x,y):
-    pass
-    
-
+from collections import deque
 
 def reach(adj, x, y):
-    #write your code here
+    queue = deque([x])
+    visisted = set()
+
+    while queue:
+        cur = queue.pop()
+        if cur == y:
+            return 1
+        for node in adj[cur]:
+            if node not in visisted:
+                queue.append(node)
+                visisted.add(node)
     return 0
 
 if __name__ == '__main__':
@@ -19,12 +24,9 @@ if __name__ == '__main__':
     data = data[2:]
     edges = list(zip(data[0:(2 * m):2], data[1:(2 * m):2]))
     x, y = data[2 * m:]
-
     adj = [[] for _ in range(n)]
     x, y = x - 1, y - 1
     for (a, b) in edges:
         adj[a - 1].append(b - 1)
         adj[b - 1].append(a - 1)
-
-    print(adj)
     print(reach(adj, x, y))
