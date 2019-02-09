@@ -4,7 +4,30 @@ import sys
 import queue
 
 def bipartite(adj):
-    #write your code here
+    
+    start = 0
+    node_colors = [0] * len(adj) 
+    
+    my_queue = queue.Queue()
+    my_queue.put((start,1))
+    node_colors[start] = 1
+
+    while not my_queue.empty():
+        cur,color = my_queue.get()
+        for node in adj[cur]:
+            if node_colors[node] == 0:
+                node_colors[node] = -color
+                my_queue.put((node,node_colors[node]))
+            if node_colors[node] == color:
+                return 0
+
+    return 1
+
+
+
+
+
+
     return -1
 
 if __name__ == '__main__':

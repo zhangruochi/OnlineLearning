@@ -1,22 +1,26 @@
 #Uses python3
 
 import sys
-from collections import dequeue
+import queue
 
 def distance(adj, s, t):
-    path = 0
-    queue = dequeue([s])
+    if s == t:
+        return -1
+
+    level = 0
+    my_queue = queue.Queue()
+    my_queue.put((s,level))
+
     visited = set()
 
-    while queue:
-        cur = queue.pop()
-        path += 1
+    while not my_queue.empty():
+        cur,level = my_queue.get()
         if cur == t:
-            return path
+            return level
 
         for node in adj[cur]:
             if node not in visited:
-                queue.append(node)
+                my_queue.put((node,level+1))
                 visited.add(node)
 
     return -1
@@ -32,4 +36,5 @@ if __name__ == '__main__':
         adj[a - 1].append(b - 1)
         adj[b - 1].append(a - 1)
     s, t = data[2 * m] - 1, data[2 * m + 1] - 1
+
     print(distance(adj, s, t))
